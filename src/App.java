@@ -1,3 +1,4 @@
+import sorting.Sorting;
 import structures.BinaryCompare;
 import structures.BinaryTree;
 import structures.LinkedList;
@@ -8,10 +9,14 @@ import utils.Printer;
 public class App {
 
     public static void main(String[] args) {
-        testTree();
-        testLinkedList();
-        testQueue();
-        testStack();
+        int arr[] = { 3, 6, 1, 9, 8, 7 };
+        Sorting sorting = new Sorting();
+        sorting.quickSort(arr, 0, arr.length - 1);
+
+        // testTree();
+        // testLinkedList();
+        // testQueue();
+        // testStack();
 
     }
 
