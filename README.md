@@ -23,3 +23,6 @@ The `JAVA PROJECTS` view allows you to manage your dependencies. More details ca
 This project requires you to have graphviz installed and you to be able to run `dot` command.
 
 https://graphviz.org/doc/info/command.html
+
+
+Assets will be generated inside the assets folder, the `.dot` file and the `.png`
