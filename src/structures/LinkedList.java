@@ -1,11 +1,11 @@
 package structures;
 
-class Node<T> {
+class LinkedListNode<T> {
     T value;
-    public Node<T> next;
-    public Node<T> prev;
+    public LinkedListNode<T> next;
+    public LinkedListNode<T> prev;
 
-    Node(T value) {
+    LinkedListNode(T value) {
         this.value = value;
         this.next = null;
         this.prev = null;
@@ -13,14 +13,14 @@ class Node<T> {
 }
 
 public class LinkedList<T> {
-    Node<T> head;
+    LinkedListNode<T> head;
 
     public LinkedList() {
         this.head = null;
     }
 
     public void addFirst(T value) {
-        Node<T> added = new Node<T>(value);
+        LinkedListNode<T> added = new LinkedListNode<T>(value);
         // List is empty we add first and last
         if (head == null) {
             head = added;
@@ -32,14 +32,14 @@ public class LinkedList<T> {
     }
 
     public void addLast(T value) {
-        Node<T> added = new Node<T>(value);
+        LinkedListNode<T> added = new LinkedListNode<T>(value);
         // List is empty we add first and last
         if (head == null) {
             head = added;
             return;
         }
 
-        Node<T> iterator = head;
+        LinkedListNode<T> iterator = head;
         while (iterator.next != null) {
             iterator = iterator.next;
         }
@@ -49,7 +49,7 @@ public class LinkedList<T> {
     @Override
     public String toString() {
         String graph = "digraph {";
-        Node<T> iterator = head;
+        LinkedListNode<T> iterator = head;
         while (iterator.next != null) {
             graph += " " + iterator.value + " -> ";
             iterator = iterator.next;
