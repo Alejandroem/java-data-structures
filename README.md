@@ -16,3 +16,10 @@ Meanwhile, the compiled output files will be generated in the `bin` folder by de
 ## Dependency Management
 
 The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+
+
+## Requirements
+
+This project requires you to have graphviz installed and you to be able to run `dot` command.
+
+https://graphviz.org/doc/info/command.html
