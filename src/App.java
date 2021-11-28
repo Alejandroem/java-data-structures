@@ -1,4 +1,6 @@
 import java.io.BufferedReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.InputStreamReader;
 
 import structures.LinkedList;
@@ -12,10 +14,21 @@ public class App {
         myList.addFirst("B");
         myList.addFirst("A");
         myList.addLast("D");
+        myList.addLast("F");
 
         System.out.println(myList);
 
-        String cmd = "echo '" + myList + "' | dot -Tpng > output.png";
+        try {
+            FileWriter myWriter = new FileWriter("file.dot");
+            myWriter.write(myList.toString());
+            myWriter.close();
+            System.out.println("Successfully wrote to the file.");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+
+        String cmd = "dot -Tpng file.dot > output.png";
         Runtime run = Runtime.getRuntime();
         Process pr = run.exec(cmd);
         pr.waitFor();
